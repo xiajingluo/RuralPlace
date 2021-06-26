@@ -1,0 +1,7 @@
+.editorconfig
+.gitignore
+jest.config.json
+
+*.md
+
+__tests__
