@@ -1,7 +1,7 @@
 export class Hello {
-  constructor(){}
+  constructor () {}
 
-  sayHello() {
+  sayHello () {
     return 'Hello World'
   }
 }

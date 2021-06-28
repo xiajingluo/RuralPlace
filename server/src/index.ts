@@ -1,5 +1,5 @@
-import { Hello } from "./Hello";
+import { Hello } from './Hello'
 
-let h = new Hello()
+const h = new Hello()
 
 console.log(h.sayHello())
