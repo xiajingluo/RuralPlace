@@ -22,4 +22,14 @@ describe('CPF Validation', () => {
 
     expect(CPF.validate('12345678911')).toBe(false);
   });
+
+  test('Should create a valid CPF', () => {
+    expect(CPF.create('111.222.333-44')).toBeInstanceOf(CPF);
+  });
+
+  test('Shoul throw a Invalid CPF Error', () => {
+    expect(() => {
+      CPF.create('123-123-123-45');
+    }).toThrowError('CPF possui um formato inválido');
+  });
 });

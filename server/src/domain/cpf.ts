@@ -1,4 +1,3 @@
-// import { Either, left } from '../@types/either';
 import { InvalidCPFError } from './errors/invalid-cpf-error';
 
 export class CPF {
