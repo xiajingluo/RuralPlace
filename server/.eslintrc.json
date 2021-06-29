@@ -1,10 +1,12 @@
 {
     "env": {
         "es2021": true,
-        "node": true
+        "node": true,
+        "jest/globals": true
     },
     "extends": [
-        "standard"
+        "standard",
+        "plugin:prettier/recommended"
     ],
     "parser": "@typescript-eslint/parser",
     "parserOptions": {
@@ -12,9 +14,12 @@
         "sourceType": "module"
     },
     "plugins": [
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier",
+        "jest"
     ],
     "rules": {
-      "no-useless-constructor": 0
+      "no-useless-constructor": 0,
+      "no-useless-escape": 0
     }
 }
