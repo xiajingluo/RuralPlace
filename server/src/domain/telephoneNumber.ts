@@ -1,4 +1,4 @@
-export class Telephone {
+export class TelephoneNumber {
   private readonly tel: string;
 
   private constructor(tel: string) {
