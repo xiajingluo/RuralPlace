@@ -5,6 +5,8 @@ export class RG {
 
   private constructor(rg: string) {
     this.rg = rg;
+
+    Object.freeze(this);
   }
 
   static create(rg: string): RG {
