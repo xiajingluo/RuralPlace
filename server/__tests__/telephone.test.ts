@@ -10,6 +10,10 @@ describe('Telephone validation', () => {
   test('Should not accept invalid Telephone', () => {
     expect(TelephoneNumber.validate('998059100')).toBe(false);
 
+    expect(TelephoneNumber.validate(null)).toBe(false);
+
+    expect(TelephoneNumber.validate(undefined)).toBe(false);
+
     expect(TelephoneNumber.validate('(84) 99805-9100')).toBe(false);
   });
 

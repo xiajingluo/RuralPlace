@@ -14,6 +14,10 @@ describe('CPF Validation', () => {
 
     expect(CPF.validate('123-123-123-12')).toBe(false);
 
+    expect(CPF.validate(null)).toBe(false);
+
+    expect(CPF.validate(undefined)).toBe(false);
+
     expect(CPF.validate('12341234123412')).toBe(false);
   });
 

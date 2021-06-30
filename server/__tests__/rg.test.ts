@@ -14,6 +14,10 @@ describe('RG Validation', () => {
 
     expect(RG.validate('111-111-111')).toBe(false);
 
+    expect(RG.validate(null)).toBe(false);
+
+    expect(RG.validate(undefined)).toBe(false);
+
     expect(RG.validate('11.234-123-x')).toBe(false);
   });
 
