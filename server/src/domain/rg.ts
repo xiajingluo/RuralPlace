@@ -16,6 +16,10 @@ export class RG {
     return new RG(rg);
   }
 
+  public get value(): string {
+    return this.rg;
+  }
+
   static validate(rg: string): boolean {
     const rgRegex =
       /(^\d{1,2})[.](\d{3})[.](\d{3})[-](\d{1}|X|x$)|(^\d{3})[.](\d{3})[.](\d{3})/;

@@ -16,6 +16,10 @@ export class TelephoneNumber {
     return new TelephoneNumber(tel);
   }
 
+  public get value(): string {
+    return this.tel;
+  }
+
   static validate(tel: string): boolean {
     const telephoneNumberRegex = /(^[0-9]{2})?(\s|-)?(9?[0-9]{4})-?([0-9]{4}$)/;
 

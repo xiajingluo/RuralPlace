@@ -16,6 +16,10 @@ export class CPF {
     return new CPF(cpf);
   }
 
+  public get value(): string {
+    return this.cpf;
+  }
+
   static validate(cpf: string): boolean {
     const cpfRegex = /^([0-9]{3}[\.][0-9]{3}[\.][0-9]{3}[-][0-9]{2})/;
 
