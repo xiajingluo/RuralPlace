@@ -24,7 +24,7 @@ export class RG {
       return false;
     }
 
-    if (rg.length < 11) {
+    if (rg.length < 11 || rg.length > 12) {
       return false;
     }
 

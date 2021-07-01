@@ -21,6 +21,7 @@
     "rules": {
       "no-useless-constructor": 0,
       "no-useless-escape": 0,
-      "no-control-regex": 0
+      "no-control-regex": 0,
+      "no-new": 0
     }
 }
