@@ -7,6 +7,13 @@ describe('Telephone validation', () => {
     expect(TelephoneNumber.validate('8499805-9100')).toBe(true);
   });
 
+  test('Should be return a value of Telephone Number in string', () => {
+    const tel = TelephoneNumber.create('84998059100');
+
+    expect(tel.value).toBe('84998059100');
+    expect(typeof tel.value).toBe('string');
+  });
+
   test('Should not accept invalid Telephone', () => {
     expect(TelephoneNumber.validate('998059100')).toBe(false);
 

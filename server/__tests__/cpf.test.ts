@@ -5,6 +5,13 @@ describe('CPF Validation', () => {
     expect(CPF.validate('111.222.333-44')).toBe(true);
   });
 
+  test('Should be return a value of CPF in string', () => {
+    const cpf = CPF.create('123.456.789-10');
+
+    expect(cpf.value).toBe('123.456.789-10');
+    expect(typeof cpf.value).toBe('string');
+  });
+
   test('Should not accept invalid CPF', () => {
     expect(CPF.validate('111.111.111.11')).toBe(false);
   });

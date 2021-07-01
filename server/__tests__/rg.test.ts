@@ -9,6 +9,13 @@ describe('RG Validation', () => {
     expect(RG.validate('11.222.333-x')).toBe(true);
   });
 
+  test('Should be return a value of RG in string', () => {
+    const rg = RG.create('11.222.333-x');
+
+    expect(rg.value).toBe('11.222.333-x');
+    expect(typeof rg.value).toBe('string');
+  });
+
   test('Should not accept invalid RG', () => {
     expect(RG.validate('111-111-111-x')).toBe(false);
 

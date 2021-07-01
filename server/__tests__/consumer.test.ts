@@ -2,27 +2,28 @@ import { Consumer } from '../src/domain/consumer';
 
 describe('Consumer creation', () => {
   test('Should create a valid Consumer', () => {
-    expect(
-      new Consumer(
-        'Luan',
-        'de Souza',
-        '123.123.123-45',
-        '123.123.123',
-        '84998059100',
-        'test@test.com'
-      )
-    ).toBeInstanceOf(Consumer);
+    const luan = new Consumer(
+      'Luan',
+      'de Souza',
+      '123.123.123-45',
+      '123.123.123',
+      '84998059100',
+      'test@test.com'
+    );
+    const gilmar = new Consumer(
+      'Gilmar',
+      'da Silva',
+      '123.123.123-12',
+      '11.222.333-X',
+      '84994465651',
+      'test@test.com'
+    );
 
-    expect(
-      new Consumer(
-        'Gilmar',
-        'da Silva',
-        '123.123.123-12',
-        '11.222.333-X',
-        '84994465651',
-        'test@test.com'
-      )
-    ).toBeInstanceOf(Consumer);
+    expect(luan).toBeInstanceOf(Consumer);
+    expect(luan.fullName).toBe('Luan de Souza');
+
+    expect(gilmar).toBeInstanceOf(Consumer);
+    expect(gilmar.fullName).toBe('Gilmar da Silva');
   });
 
   test('Should throw invalid CPF error', () => {

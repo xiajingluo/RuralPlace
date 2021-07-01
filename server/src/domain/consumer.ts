@@ -4,12 +4,12 @@ import { RG } from './rg';
 import { TelephoneNumber } from './telephoneNumber';
 
 export class Consumer {
-  private readonly firstName: string;
-  private readonly lastName: string;
-  private readonly cpf: CPF;
-  private readonly rg: RG;
-  private readonly telephone: TelephoneNumber;
-  private readonly email: Email;
+  private readonly _firstName: string;
+  private readonly _lastName: string;
+  private readonly _cpf: CPF;
+  private readonly _rg: RG;
+  private readonly _telephone: TelephoneNumber;
+  private readonly _email: Email;
 
   constructor(
     firstName: string,
@@ -19,11 +19,15 @@ export class Consumer {
     telephone: string,
     email: string
   ) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    this.cpf = CPF.create(cpf);
-    this.rg = RG.create(rg);
-    this.telephone = TelephoneNumber.create(telephone);
-    this.email = Email.create(email);
+    this._firstName = firstName;
+    this._lastName = lastName;
+    this._cpf = CPF.create(cpf);
+    this._rg = RG.create(rg);
+    this._telephone = TelephoneNumber.create(telephone);
+    this._email = Email.create(email);
+  }
+
+  get fullName(): string {
+    return `${this._firstName} ${this._lastName}`;
   }
 }
