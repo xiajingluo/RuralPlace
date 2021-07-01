@@ -1,4 +1,4 @@
-import { TelephoneNumber } from '../src/domain/telephoneNumber';
+import { TelephoneNumber } from '../src/domain/telephone-number';
 
 describe('Telephone validation', () => {
   test('Should accept valid Telephone', () => {

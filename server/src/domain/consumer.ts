@@ -1,7 +1,7 @@
 import { CPF } from './cpf';
 import { Email } from './email';
 import { RG } from './rg';
-import { TelephoneNumber } from './telephoneNumber';
+import { TelephoneNumber } from './telephone-number';
 
 export class Consumer {
   private readonly _firstName: string;
