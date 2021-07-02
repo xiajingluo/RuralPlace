@@ -34,3 +34,33 @@ describe('Product validation', () => {
     }).toThrowError('Preço possuí um formato inválido');
   });
 });
+
+describe('Validation Quantity', () => {
+  test('Should create a product with a valid quantity', () => {
+    expect(new Product('Apple', 0.5, 3, 'kg')).toBeInstanceOf(Product);
+  });
+
+  test('Should thorw a Invalid Quantity erro', () => {
+    expect(() => {
+      new Product('Apple', 0.5, 0.12654, 'kg');
+    }).toThrowError('Informe uma quantidade válida');
+  });
+});
+
+describe('Product Quantity', () => {
+  test('Should reduce quantity', () => {
+    const product = new Product('Apple', 0.5, 5, 'kg');
+
+    product.setQuantityToReduce(3);
+
+    expect(product.quantities).toBe(2);
+  });
+
+  test('Should throw Not Have Product erro', () => {
+    const product = new Product('Apple', 0.5, 3, 'uni');
+
+    expect(() => {
+      product.setQuantityToReduce(5);
+    }).toThrowError('Não foi possível encontrar o Produto em questão');
+  });
+});

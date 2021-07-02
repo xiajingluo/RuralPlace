@@ -1,12 +1,13 @@
 import { InvalidPriceError } from './errors/invalid-price-error';
 import { InvalidQuantityError } from './errors/invalid-quantity-error';
+import { NotHaveProductError } from './errors/not-have-product-error';
 import { Measurement } from './measurement';
 
 export class Product {
-  private readonly _name: string;
-  private readonly _price: number;
-  private readonly _quantity: number;
-  private readonly _measurement: Measurement;
+  private _name: string;
+  private _price: number;
+  private _quantity: number;
+  private _measurement: string;
 
   constructor(
     name: string,
@@ -17,7 +18,7 @@ export class Product {
     this._name = name;
     this._price = this.validatePrice(price);
     this._quantity = this.validateQuantity(quantity);
-    this._measurement = Measurement.create(measurement);
+    this._measurement = Measurement.create(measurement).value;
   }
 
   private validatePrice(price: number): number {
@@ -28,6 +29,10 @@ export class Product {
   }
 
   private validateQuantity(quantity: number): number {
+    if (!Number.isInteger(quantity)) {
+      throw new InvalidQuantityError();
+    }
+
     if (quantity < 0) {
       throw new InvalidQuantityError();
     }
@@ -39,5 +44,17 @@ export class Product {
       style: 'currency',
       currency: 'BRL'
     });
+  }
+
+  get quantities(): number {
+    return this._quantity;
+  }
+
+  public setQuantityToReduce(quantityToReduce: number): void {
+    if (quantityToReduce > this._quantity) {
+      throw new NotHaveProductError();
+    }
+
+    this._quantity -= quantityToReduce;
   }
 }
